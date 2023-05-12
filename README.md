@@ -12,11 +12,12 @@ Para cadastrar um cliente, é necessário fornecer um nome de usuário (deve ser
 ### Como cadastrar um veterinário 
 Para cadastrar um veterinário, é necessário fornecer um nome de usuário (deve ser único) e senha, CRMV e nome do veterinário, informações de contato, CEP (que será consumido pela API CEP) número e complemento (que não são fornecidos pela informação do CEP).
 ### Como cadastrar um cachorro
+
 Para cadastrar um cachorro, você DEVE vincular um tutor. Para isso, basta fornecer o documento do tutor desejado. E você DEVE informar o "idAPI" da raça. *
 *Para buscar "idAPI" correto da raca do cachorro, basta ir na  Request "Buscar raca por nome", na pasta "Raça", e adicionar o inicio do nome da raca no final do endereco, depois de .../raca/ 
 e.g.: {{baseUrl}}/cachorros/raca/pinscher
 então e request retornará a(s) raça(s) correspondentes, com seus "idAPI".
---- 
+
 ## Consulta/Atendimento
 
 ### Como criar uma consulta
