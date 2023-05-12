@@ -1,0 +1,7 @@
+CREATE TABLE tb_consulta_cachorro(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+consulta_id BIGINT NOT NULL,
+cachorro_id BIGINT NOT NULL,
+FOREIGN KEY (consulta_id) REFERENCES tb_consulta(id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (cachorro_id) REFERENCES tb_cachorro(dog_id) ON DELETE CASCADE ON UPDATE CASCADE
+);

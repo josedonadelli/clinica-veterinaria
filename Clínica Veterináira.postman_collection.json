@@ -1,0 +1,761 @@
+{
+	"info": {
+		"_postman_id": "2befb05c-e787-4685-9788-1e681e6241e5",
+		"name": "Clínica Veterináira",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21080655"
+	},
+	"item": [
+		{
+			"name": "Veterinário",
+			"item": [
+				{
+					"name": "Buscar todos os veterinários",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/veterinarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar um veterinário",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/veterinarios/11111?Au",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinarios",
+								"11111"
+							],
+							"query": [
+								{
+									"key": "Au",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um veterinário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Joana\",\r\n    \"crmv\" : \"11111\",\r\n    \"contato\" : {\r\n        \"telefone\" : \"33333333\",\r\n        \"email\" : \"joana@vet.com\"\r\n    },\r\n    \"endereco\" : {\r\n        \"cep\" : \"12342-111\",\r\n        \"rua\" : \"Rua dos bacanos\",\r\n        \"numero\" : \"312\",\r\n        \"complemento\" : \"Ap11\"\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar um veterinario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Joana\",\r\n    \"crmv\" : \"11111\",\r\n    \"contato\" : {\r\n        \"telefone\" : \"99999999\",\r\n        \"email\" : \"joana_silveira@vet.com\"\r\n    },\r\n    \"endereco\" : {\r\n        \"cep\" : \"12342-231\",\r\n        \"rua\" : \"Rua dos bacanos\",\r\n        \"numero\" : \"322\",\r\n        \"complemento\" : \"Ap11\"\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veterinarios/11111",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinarios",
+								"11111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um veterinario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/veterinarios/12345",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veterinarios",
+								"12345"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Buscar todos os clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar um cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"username\" : \"cliente3\",\r\n    \"password\" : \"123cliente\",\r\n    \"documento\" : \"123\",\r\n    \"nome\" : \"Alex\",\r\n    \"contato\" : {\r\n        \"telefone\" : \"12313131\",\r\n        \"email\" : \"paulo@vet.com\"\r\n    },\r\n    \"endereco\" : {\r\n        \"cep\" : \"13484360\",\r\n        \"rua\" : \"Rua do Fim\",\r\n        \"numero\" : \"61\",\r\n        \"complemento\" : \"Ap. 16\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documento\" : \"444\",\r\n    \"nome\" : \"Claudia\",\r\n    \"contato\" : {\r\n        \"telefone\" : \"31411323\",\r\n        \"email\" : \"claudia@vet.com\"\r\n    },\r\n    \"endereco\" : {\r\n        \"cep\" : \"1334-656\",\r\n        \"rua\" : \"Rua Abril\",\r\n        \"numero\" : \"36\",\r\n        \"complemento\" : \"Ap. 26\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/444",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar consulta de um cachorro do cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/123/cachorros/1/consultas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"123",
+								"cachorros",
+								"1",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cachorro",
+			"item": [
+				{
+					"name": "Buscar todos os cachorros",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cachorros",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cachorros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar um cachorro",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cachorros/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cachorros",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um cachorro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTkxNDIyMjEsImV4cCI6MTY1OTE0NTgyMSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSUyIsIlJPTEVfTUFOQUdFUlMiXX0.XNIhN8kEfxuk7uLaz-uC5rUYJPIV9vBUqFDQNYhgl-d5G-KwFRvomC8aBPwwsPqbVQF5RYc1GWaFtqetquoxWA",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "9b909153-2975-4cb8-9dab-7621309d41b4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Bacon\",\r\n    \"raca\" : {\r\n        \"idAPI\":210\r\n        \r\n    },\r\n    \"cliente\" : {\r\n        \"documento\" : \"123\",\r\n        \"nome\" : \"Alex\"\r\n    } \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cachorros",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cachorros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar cachorro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cachorros/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cachorros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir cachorro",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cachorros/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cachorros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar consultas de um cachorro",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/132315674/cachorros/1/consultas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"132315674",
+								"cachorros",
+								"1",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Buscar todas as consultas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/consultas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar uma consulta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/consultas/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"consultas",
+								"2"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar uma consulta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"peso\" : 12.5,\r\n    \"altura\" : 90,\r\n    \"idade\" : 5,\r\n    \"veterinario\" : {\r\n        \"crmv\" : \"12345\"\r\n    },\r\n    \"cachorro\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/consultas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar uma consulta",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"peso\" : 12.5,\r\n    \"altura\" : 90,\r\n    \"idade\" : 5,\r\n    \"veterinario\" : {\r\n        \"crmv\" : \"11111\"\r\n    },\r\n    \"cachorro\" : {\r\n        \"id\" : 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/consultas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir uma consulta",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{btoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/consultas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Criar usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nome\":\"Jose Henrique\", \"username\":\"jhvd\", \"password\":\"0000\", \"roles\":[\"USERS\" , \"MANAGERS\"]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"vetporamor\", \"password\" : \"mentiraehpelodinheiro\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Raca",
+			"item": [
+				{
+					"name": "Buscar raca por nome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "9b909153-2975-4cb8-9dab-7621309d41b4",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTkxMDIyNjYsImV4cCI6MTY1OTEwNTg2NiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSUyIsIlJPTEVfTUFOQUdFUlMiXX0.EZVqWHNuXBC99bPpvf9MgTfD9orI5B4aWRt4yXH8Ke7ZmIEMeOwYnvF4lf4mEFdNb6cvGTg1RxUC3Xcph16mMw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/racas/rottweiler",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"racas",
+								"rottweiler"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
